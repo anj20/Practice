@@ -15,7 +15,10 @@ const index = ({ datas }) => {
       </div>
       <div className=" h-[95vh] w-[100vw] p-9 pt-0 text-left grid gap-3">
         {datas.map((data) => (
-          <div className="container border-2 border-gray-500 rounded-md">
+          <div
+            className="container border-2 border-gray-500 rounded-md"
+            key={data.id}
+          >
             <h1 className=" text-xl font-extrabold text-center">{data.name}</h1>
             <p
               className=" text-sm font-serif text-center"
