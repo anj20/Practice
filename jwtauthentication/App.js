@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
@@ -10,6 +11,7 @@ const PORT = 4000;
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser());
 
 //View Engine
 app.set("view engine", "ejs");
@@ -25,6 +27,7 @@ connection.once("open", () => {
 });
 
 app.get("/", (req, res) => {
+  // res.send("Hello World");
   res.render("../views/welcome.ejs");
 });
 app.get("/classes", (req, res) => {
@@ -33,6 +36,7 @@ app.get("/classes", (req, res) => {
 app.get("/contact", (req, res) => {
   res.render("../views/contact.ejs");
 });
+
 app.use(require("./routes/authRoutes"));
 
 app.listen(PORT, () => {

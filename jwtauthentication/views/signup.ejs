@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="/" class="logo">Gym</a>
+      </div>
+      <div class="navbar-links">
+        <a href="/">Home</a>
+        <a href="/classes">Classes</a>
+        <a href="/contact">Contact</a>
+        <a href="/login" class="login-button">Login</a>
+      </div>
+    </nav>
+
+    <section class="promotion" style="margin: 30px;">
+      <h1 class="animate__animated animate__bounceInDown">
+        Your Journey Starts Here
+      </h1>
+      <p class="animate__animated animate__fadeIn">
+        Unlock your full potential and achieve your fitness goals at our
+        state-of-the-art gym.
+      </p>
+    </section>
+
+    <div class="signup-container animate__animated animate__fadeInUp">
+      <h2>Sign Up</h2>
+      <form action="/signup">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+        <div class="usernameError"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" />
+        <div class="emailError"></div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <div class="passwordError"></div>
+
+        <button type="submit" class="animate__animated animate__bounce">
+          Sign Up
+        </button>
+      </form>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const usernameError = document.querySelector(".usernameError");
+      const emailError = document.querySelector(".emailError");
+      const passwordError = document.querySelector(".passwordError");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        alert("You have successfully signed up");
+        passwordError.textContent = "";
+        emailError.textContent = "";
+        usernameError.textContent = "";
+
+        const email = form.email.value;
+        const password = form.password.value;
+        const name = form.name.value;
+        const username = form.username.value;
+        // console.log(email, password, name, username);
+        try {
+          const res = await fetch("/signup", {
+            method: "POST",
+            body: JSON.stringify({ username, email, password }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await res.json();
+          if (data.error) {
+            console.log(data.error);
+            emailError.textContent = data.error.email;
+            passwordError.textContent = data.error.password;
+            usernameError.textContent = data.error.username;
+          }
+          if (data.user) {
+            location.assign("/");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    </script>
+  </body>
+</html>
