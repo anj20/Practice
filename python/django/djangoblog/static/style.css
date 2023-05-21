@@ -1,0 +1,179 @@
+body {
+  background-image: url("ocean.jpg");
+  background-size: cover;
+  color: rgb(195, 49, 49);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: auto;
+}
+
+header {
+  text-align: center;
+  margin: 0;
+  padding: 50px 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+#about {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+a {
+  color: rgb(195, 49, 49);
+  text-decoration: none;
+}
+a:hover {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Style the main heading */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style the container for the articles */
+.articles {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Style each individual article */
+.article {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  /* width: 70vw; */
+}
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the article title */
+.article h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the article body */
+.article p:first-of-type {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Style the article date */
+.article p:last-of-type {
+  color: #999;
+  font-size: 14px;
+}
+
+footer:hover {
+  background-color: #444;
+}
+
+/* Animate the header */
+header {
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: rgb(34, 132, 34);
+}
+
+/* Animate the article title on hover */
+.article h2 {
+  transition: color 0.3s ease;
+}
+
+.article:hover h2 {
+  color: #555;
+}
+
+/* Your existing CSS code */
+
+/* Additional styles for the article detail page */
+.article-detail {
+  margin: 20px auto;
+  max-width: 90vw;
+}
+
+img {
+  width: 90vw;
+  height: 40vh;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.1);
+}
+
+.article-detail .article {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-detail .article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.article-detail .article h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.article-detail .article:hover h2 {
+  color: #555;
+}
+
+.article-detail .article p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.article-detail .article .article-date {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Rest of your existing CSS code */

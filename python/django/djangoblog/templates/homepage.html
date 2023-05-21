@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dark Ocean WebApp</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to Dark Ocean WebApp</h1>
-    </header>
+{% extends 'base.html' %} {% block content %}
+<header>
+  <h1>Welcome to Dark Ocean WebApp</h1>
+</header>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Welcome to Dark Ocean WebApp, where you can dive into the depths of the
-        digital world. Our platform combines the mysterious beauty of the dark
-        ocean with the power of modern technology.
-      </p>
-      <p>
-        Explore our features and discover the hidden treasures that await you.
-      </p>
-    </section>
-
-    <footer>
-      <p>© 2023 Dark Ocean WebApp. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Welcome to Dark Ocean WebApp, where you can dive into the depths of the
+    digital world. Our platform combines the mysterious beauty of the dark ocean
+    with the power of modern technology.
+  </p>
+  <p>Explore our features and discover the hidden treasures that await you.</p>
+</section>
+{% endblock %}

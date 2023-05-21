@@ -7,7 +7,7 @@ class Article(models.Model):
     slug = models.SlugField()  # slug
     body = models.TextField()  # body
     date = models.DateTimeField(auto_now_add=True)  # date
-    # add in thumbnail later
+    thumb = models.ImageField(default="default.png", blank=True)  # thumb
     # add in author later
 
     # python manage.py makemigrations
@@ -15,3 +15,6 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def snippet(self):
+        return self.body[:50] + "..."

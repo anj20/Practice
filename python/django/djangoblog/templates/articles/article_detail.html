@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<header>
+  <h1>Article Details</h1>
+</header>
+
+<div class="article-detail">
+  <img src="{{article.thumb.url}}" alt="{{article.image.alt}}" />
+  <div class="article">
+    <h2>{{article.title}}</h2>
+    <p>{{article.body}}</p>
+    <p>Published on: <span class="article-date">{{article.date}}</span></p>
+  </div>
+</div>
+{% endblock %}
