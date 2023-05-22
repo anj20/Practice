@@ -6,7 +6,37 @@
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    <!-- <h1><a href="{% url 'list' %}">Articles</a></h1> -->
+    <div class="navbar">
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <form class="logout-link" action="/accounts/logout/" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+        <li>
+          <form class="logout-link" action="/articles/create/" method="post">
+            {% csrf_token %}
+            <button type="submit">Create</button>
+          </form>
+        </li>
+        {% else %}
+        <li>
+          <form class="logout-link" action="/accounts/login/" method="post">
+            {% csrf_token %}
+            <button type="submit">Login</button>
+          </form>
+        </li>
+        <li>
+          <form class="logout-link" action="/accounts/signup/" method="post">
+            {% csrf_token %}
+            <button type="submit">Signup</button>
+          </form>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
     <div class="wrapper">{% block content %} {% endblock %}</div>
   </body>
 </html>
