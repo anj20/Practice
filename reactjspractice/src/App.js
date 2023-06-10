@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import ToUppercase from "./ToUppercase";
-import ColorPicker from "./ColorPicker";
-import Reminder from "./Reminder";
+import Draggable from "./Draggable";
 
 const App = () => {
   const questions = ["Who is the world's tallest peson?", "Dwaipayan"];
@@ -17,9 +15,7 @@ const App = () => {
       <div className="text-cyan-800 font-bold" onClick={handleClick}>
         Click me!{questions[count]}
       </div>
-      <ToUppercase />
-      <ColorPicker />
-      <Reminder />
+      <Draggable />
     </div>
   );
 };
